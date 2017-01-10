@@ -17,7 +17,7 @@ class MyApplicationLike(application: Application, tinkerFlags: Int, tinkerLoadVe
     init {
         TinkerInstaller.install(this)
         // 集成极光推送
-        JPushInterface.setDebugMode(true);    // 设置开启日志,发布时请关闭日志
-        JPushInterface.init(application);            // 初始化 JPush
+        JPushInterface.setDebugMode(true)    // 设置开启日志,发布时请关闭日志
+        JPushInterface.init(application)            // 初始化 JPush
     }
 }

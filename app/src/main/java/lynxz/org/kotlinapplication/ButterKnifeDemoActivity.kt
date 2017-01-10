@@ -18,7 +18,7 @@ class ButterKnifeDemoActivity : BaseActivity() {
     @BindView(R.id.btn)
     lateinit var btn: Button
 
-    //    @JvmField
+    @JvmField
     @BindColor(R.color.main_text_color)
     var mainTextColor: Int = 0
 

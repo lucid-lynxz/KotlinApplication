@@ -10,6 +10,10 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView
 import pub.devrel.easypermissions.AfterPermissionGranted
 import pub.devrel.easypermissions.EasyPermissions
 
+/**
+ * 测试该二维码项目,之前在项目中发现该改第三方库在华为部分双摄像头手机上会出现屏幕画面虚化模糊的问题
+ * 测试后发现,view所在的父容器都得是frameLayout才行
+ * */
 class SimpleScannerActivity : Activity(), ZXingScannerView.ResultHandler {
     private var mScannerView: ZXingScannerView? = null
 
