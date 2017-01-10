@@ -10,6 +10,5 @@ import com.tencent.tinker.loader.shareutil.ShareConstants
 class MyApplication : TinkerApplication(ShareConstants.TINKER_ENABLE_ALL, "lynxz.org.kotlinapplication.MyApplicationLike") {
     override fun onCreate() {
         super.onCreate()
-
     }
 }

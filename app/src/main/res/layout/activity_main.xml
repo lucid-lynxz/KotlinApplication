@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:id="@+id/activity_main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -41,6 +41,11 @@
         android:id="@+id/tv_butterknife"
         style="@style/common_red_btn"
         android:text="butterknife_kotlin"/>
+
+    <TextView
+        android:id="@+id/tv_textureview_livecamera"
+        style="@style/common_red_btn"
+        android:text="textureview_demo"/>
 
 
 </LinearLayout>

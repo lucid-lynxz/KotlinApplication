@@ -49,6 +49,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
+        <activity android:name=".TextureViewDemo.LiveCameraDemo"/>
+
+
         <!-- For test only 测试高级功能 -->
         <activity
             android:name=".jpush.PushSetActivity"

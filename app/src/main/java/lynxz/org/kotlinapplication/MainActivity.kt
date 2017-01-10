@@ -24,6 +24,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // tinker好像跟camera.open冲突
         // tinker热修复差分包文件路径设定,tinker检测到差分包存在后会去加载,并在下次启动程序后生效,生效后会自动删除差分包
         val patchPath = Environment.getExternalStorageDirectory().absolutePath + "/patch_signed_7zip.apk"
         Log.i("tinker ", "pathPath = $patchPath")
@@ -50,6 +51,8 @@ class MainActivity : BaseActivity() {
         // 测试kotlin与butterknife的兼容性,发现对于butterknife的annotation还需要8.*才行
         tv_butterknife.setOnClickListener { startActivity(Intent(this@MainActivity, ButterKnifeDemoActivity::class.java)) }
 
+        // 测试textureView的简单使用,跟tinker冲突了,会造成程序崩溃,就不在这里测试了,保留代码是为了以后有需要的话复现
+//        tv_textureview_livecamera.setOnClickListener { startActivity(Intent(this, LiveCameraDemo::class.java)) }
 
         // 取消注释后,运行gradle/tinkerPatchDebug,测试tinker功能
 //        toast("hello,I'm patch second times ")

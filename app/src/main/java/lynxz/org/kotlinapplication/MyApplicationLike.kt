@@ -5,7 +5,6 @@ import android.content.Intent
 import android.content.res.AssetManager
 import android.content.res.Resources
 import cn.jpush.android.api.JPushInterface
-
 import com.tencent.tinker.lib.tinker.TinkerInstaller
 import com.tencent.tinker.loader.app.DefaultApplicationLike
 
