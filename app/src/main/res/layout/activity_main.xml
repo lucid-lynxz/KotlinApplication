@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -12,40 +14,61 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="lynxz.org.kotlinapplication.MainActivity">
 
-    <TextView
-        android:id="@+id/tv_hello_dialog"
-        style="@style/common_red_btn"
-        android:text="Hello dialog"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_jpush_demo"
-        style="@style/common_red_btn"
-        android:text="Jpush demo"/>
+        <TextView
+            android:id="@+id/tv_hello_dialog"
+            style="@style/common_red_btn"
+            android:text="Hello dialog"/>
 
-    <TextView
-        android:id="@+id/tv_scan"
-        style="@style/common_red_btn"
-        android:text="barScanner公司所用库"/>
+        <TextView
+            android:id="@+id/tv_jpush_demo"
+            style="@style/common_red_btn"
+            android:text="Jpush demo"/>
 
-    <TextView
-        android:id="@+id/tv_scan_zxing"
-        style="@style/common_red_btn"
-        android:text="barScannerZxing"/>
+        <TextView
+            android:id="@+id/tv_scan"
+            style="@style/common_red_btn"
+            android:text="barScanner公司所用库"/>
 
-    <TextView
-        android:id="@+id/tv_retrofit"
-        style="@style/common_red_btn"
-        android:text="retrofit示例"/>
+        <TextView
+            android:id="@+id/tv_scan_zxing"
+            style="@style/common_red_btn"
+            android:text="barScannerZxing"/>
 
-    <TextView
-        android:id="@+id/tv_butterknife"
-        style="@style/common_red_btn"
-        android:text="butterknife_kotlin"/>
+        <TextView
+            android:id="@+id/tv_retrofit"
+            style="@style/common_red_btn"
+            android:text="retrofit示例"/>
 
-    <TextView
-        android:id="@+id/tv_textureview_livecamera"
-        style="@style/common_red_btn"
-        android:text="textureview_demo"/>
+        <TextView
+            android:id="@+id/tv_butterknife"
+            style="@style/common_red_btn"
+            android:text="butterknife_kotlin"/>
+
+        <TextView
+            android:id="@+id/tv_textureview_livecamera"
+            style="@style/common_red_btn"
+            android:text="textureview_demo"/>
+
+        <TextView
+            android:id="@+id/tv_bluetoothh"
+            style="@style/common_red_btn"
+            android:text="bluetooth"/>
 
 
-</LinearLayout>
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tl_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#cdcdcdcd"
+            app:tabIndicatorColor="#f00"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@android:color/holo_blue_bright"
+            app:tabTextColor="@android:color/holo_red_dark"/>
+    </LinearLayout>
+</ScrollView>

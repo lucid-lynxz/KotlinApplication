@@ -43,34 +43,33 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     // 极光推送测试
-    compile 'cn.jiguang.sdk:jpush:3.0.0'
-    compile 'cn.jiguang.sdk:jcore:1.0.0'
     // 声联网二维码扫描库可以直接使用zxing
-    compile 'me.dm7.barcodescanner:zxing:1.9'
     //权限
-    compile 'pub.devrel:easypermissions:0.2.0'
-
     // 测试butterknife和kotlin冲突
     compile "com.jakewharton:butterknife:$butterknife_version"
     kapt "com.jakewharton:butterknife-compiler:$butterknife_version"
-
     // retrofit
-    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
-    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
     //有用到rxjava,这里直接导入
-    compile 'io.reactivex:rxjava:1.0.14'
-    compile 'io.reactivex:rxandroid:1.0.1'
-
     // 热修复thinker
     //optional, help to generate the final application
     provided "com.tencent.tinker:tinker-android-anno:$tinker_version"
     //tinker's main Android lib
     compile "com.tencent.tinker:tinker-android-lib:$tinker_version"
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'cn.jiguang.sdk:jpush:3.0.0'
+    compile 'cn.jiguang.sdk:jcore:1.0.0'
+    compile 'me.dm7.barcodescanner:zxing:1.9'
+    compile 'pub.devrel:easypermissions:0.2.0'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
+    compile 'io.reactivex:rxjava:1.0.14'
+    compile 'io.reactivex:rxandroid:1.0.1'
+    compile 'com.android.support:design:25.1.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+    testCompile 'junit:junit:4.12'
 }
 
 kapt {

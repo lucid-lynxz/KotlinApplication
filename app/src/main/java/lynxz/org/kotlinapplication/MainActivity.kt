@@ -4,9 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Environment
 import android.util.Log
+import android.view.View
 import com.tencent.tinker.lib.tinker.TinkerInstaller
 import kotlinx.android.synthetic.main.activity_main.*
 import lynxz.org.kotlinapplication.jpush.MainPushDemoActivity
+import lynxz.org.kotlinapplication.util.Logger
 import lynxz.org.kotlinapplication.widget.MyDialogFragment
 import lynxz.org.kotlinapplication.zxing.activity.CaptureActivity
 
@@ -23,6 +25,8 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        testTablayout()
 
         // tinker好像跟camera.open冲突
         // tinker热修复差分包文件路径设定,tinker检测到差分包存在后会去加载,并在下次启动程序后生效,生效后会自动删除差分包
@@ -51,12 +55,40 @@ class MainActivity : BaseActivity() {
         // 测试kotlin与butterknife的兼容性,发现对于butterknife的annotation还需要8.*才行
         tv_butterknife.setOnClickListener { startActivity(Intent(this@MainActivity, ButterKnifeDemoActivity::class.java)) }
 
+        tv_bluetoothh.setOnClickListener { startActivity(Intent(this@MainActivity, BluetoothActivity::class.java)) }
+
         // 测试textureView的简单使用,跟tinker冲突了,会造成程序崩溃,就不在这里测试了,保留代码是为了以后有需要的话复现
 //        tv_textureview_livecamera.setOnClickListener { startActivity(Intent(this, LiveCameraDemo::class.java)) }
 
         // 取消注释后,运行gradle/tinkerPatchDebug,测试tinker功能
 //        toast("hello,I'm patch second times ")
 //        showLog()
+
+        // 测试格式化日志扩展类
+        Logger.init(Logger.debugLevel,MainActivity::class.java)
+        var s = "{\"firstName\":\"Brett\",\"lastName\":\"McLaughlin\",\"email\":\"aaaa\"}"
+        Logger.json(s)
+    }
+
+
+    // 测试tablayout功能
+    private fun testTablayout() {
+        var largeTab = layoutInflater.inflate(R.layout.tab_large, null, false)
+        val tvHolder = largeTab.findViewById(R.id.tv_place)
+        tvHolder.visibility = View.GONE
+        var normalTab1 = layoutInflater.inflate(R.layout.tab_large, null, false)
+        var normalTab2 = layoutInflater.inflate(R.layout.tab_large, null, false)
+        var normalTab3 = layoutInflater.inflate(R.layout.tab_large, null, false)
+        var normalTab4 = layoutInflater.inflate(R.layout.tab_large, null, false)
+
+
+        tl_main.addTab(tl_main.newTab().setCustomView(normalTab1))
+        tl_main.addTab(tl_main.newTab().setCustomView(normalTab2))
+        tl_main.addTab(tl_main.newTab().setCustomView(largeTab))
+        tl_main.addTab(tl_main.newTab().setCustomView(normalTab3))
+        tl_main.addTab(tl_main.newTab().setCustomView(normalTab4))
+
+
     }
 
     fun showLog() {
