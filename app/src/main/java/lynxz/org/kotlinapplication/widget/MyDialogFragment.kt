@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.layout_dialog.*
-import lynxz.org.kotlinapplication.Main2Activity
+import lynxz.org.kotlinapplication.activity.Main2Activity
 import lynxz.org.kotlinapplication.R
 
 /**

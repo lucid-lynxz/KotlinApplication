@@ -1,6 +1,7 @@
-package lynxz.org.kotlinapplication
+package lynxz.org.kotlinapplication.activity
 
 import android.os.Bundle
+import lynxz.org.kotlinapplication.R
 
 class Main2Activity : BaseActivity() {
 

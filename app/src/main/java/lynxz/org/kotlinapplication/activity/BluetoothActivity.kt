@@ -1,4 +1,4 @@
-package lynxz.org.kotlinapplication
+package lynxz.org.kotlinapplication.activity
 
 import android.app.Activity
 import android.bluetooth.BluetoothAdapter
@@ -8,6 +8,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
+import lynxz.org.kotlinapplication.R
+import lynxz.org.kotlinapplication.toast
 import lynxz.org.kotlinapplication.util.Logger
 
 

@@ -8,7 +8,7 @@ import android.view.TextureView;
 
 import java.io.IOException;
 
-import lynxz.org.kotlinapplication.BaseActivity;
+import lynxz.org.kotlinapplication.activity.BaseActivity;
 
 /**
  * Created by lynxz on 2017/1/10.

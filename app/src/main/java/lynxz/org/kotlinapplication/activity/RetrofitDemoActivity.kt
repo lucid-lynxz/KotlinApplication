@@ -1,7 +1,9 @@
-package lynxz.org.kotlinapplication
+package lynxz.org.kotlinapplication.activity
 
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_retrofit.*
+import lynxz.org.kotlinapplication.R
+import lynxz.org.kotlinapplication.Service
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory

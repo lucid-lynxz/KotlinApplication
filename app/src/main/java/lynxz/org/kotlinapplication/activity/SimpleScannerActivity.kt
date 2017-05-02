@@ -1,4 +1,4 @@
-package lynxz.org.kotlinapplication
+package lynxz.org.kotlinapplication.activity
 
 import android.app.Activity
 import android.content.ContentValues.TAG
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import com.google.zxing.Result
 import kotlinx.android.synthetic.main.activity_scan_qr.*
+import lynxz.org.kotlinapplication.R
+import lynxz.org.kotlinapplication.toast
 import me.dm7.barcodescanner.zxing.ZXingScannerView
 import pub.devrel.easypermissions.AfterPermissionGranted
 import pub.devrel.easypermissions.EasyPermissions

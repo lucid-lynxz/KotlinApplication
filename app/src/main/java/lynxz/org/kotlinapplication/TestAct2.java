@@ -1,5 +1,6 @@
 package lynxz.org.kotlinapplication;
 
+import lynxz.org.kotlinapplication.activity.BaseActivity;
 import lynxz.org.kotlinapplication.bean.UPlusGoGetTokenBean;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;

@@ -40,6 +40,8 @@
     <!-- 蓝牙功能 -->
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!-- ble -->
+    <!--<uses-feature android:name="ble"-->
 
     <application
         xmlns:tools="http://schemas.android.com/tools"
@@ -182,12 +184,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Main2Activity">
+        <activity android:name=".activity.Main2Activity">
         </activity>
 
         <!-- <activity android:name=".jpush.MainPushDemoActivity"/> -->
         <activity android:name=".jpush.MainPushDemoActivity"/>
-        <activity android:name=".SimpleScannerActivity"/>
+        <activity android:name=".activity.SimpleScannerActivity"/>
 
         <!-- zxing -->
         <activity
@@ -199,13 +201,13 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar"/>
         <activity
-            android:name=".RetrofitDemoActivity"
+            android:name=".activity.RetrofitDemoActivity"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".ButterKnifeDemoActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".BluetoothActivity">
-        </activity>
+        <activity android:name=".activity.BluetoothActivity"/>
+        <activity android:name=".activity.BLEActivity"/>
     </application>
 
 </manifest>

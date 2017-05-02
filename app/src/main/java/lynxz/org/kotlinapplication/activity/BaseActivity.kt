@@ -1,4 +1,4 @@
-package lynxz.org.kotlinapplication
+package lynxz.org.kotlinapplication.activity
 
 import android.support.v7.app.AppCompatActivity
 

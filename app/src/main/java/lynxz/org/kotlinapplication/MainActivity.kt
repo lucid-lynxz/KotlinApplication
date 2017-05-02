@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import com.tencent.tinker.lib.tinker.TinkerInstaller
 import kotlinx.android.synthetic.main.activity_main.*
+import lynxz.org.kotlinapplication.activity.*
 import lynxz.org.kotlinapplication.jpush.MainPushDemoActivity
 import lynxz.org.kotlinapplication.util.Logger
 import lynxz.org.kotlinapplication.widget.MyDialogFragment
@@ -56,6 +57,7 @@ class MainActivity : BaseActivity() {
         tv_butterknife.setOnClickListener { startActivity(Intent(this@MainActivity, ButterKnifeDemoActivity::class.java)) }
 
         tv_bluetoothh.setOnClickListener { startActivity(Intent(this@MainActivity, BluetoothActivity::class.java)) }
+        tv_bluetooth_low_energy.setOnClickListener { startActivity(Intent(this@MainActivity, BLEActivity::class.java)) }
 
         // 测试textureView的简单使用,跟tinker冲突了,会造成程序崩溃,就不在这里测试了,保留代码是为了以后有需要的话复现
 //        tv_textureview_livecamera.setOnClickListener { startActivity(Intent(this, LiveCameraDemo::class.java)) }

@@ -6,6 +6,7 @@ import android.widget.TextView
 import butterknife.BindColor
 import butterknife.BindView
 import butterknife.ButterKnife
+import lynxz.org.kotlinapplication.activity.BaseActivity
 
 /**
  * Created by zxz on 2016/12/29.
