@@ -40,9 +40,10 @@
     <!-- 蓝牙功能 -->
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <!-- ble -->
-    <!--<uses-feature android:name="ble"-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
+    <!-- ble -->
+    <!-- <uses-feature android:name="ble" -->
     <application
         xmlns:tools="http://schemas.android.com/tools"
         android:name=".MyApplication"
@@ -208,6 +209,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.BluetoothActivity"/>
         <activity android:name=".activity.BLEActivity"/>
+        <activity android:name=".activity.EspressoActivity">
+        </activity>
     </application>
 
 </manifest>
