@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.activity_ble.*
 import lynxz.org.kotlinapplication.R
 import lynxz.org.kotlinapplication.adapter.RvBleAdapter
 import lynxz.org.kotlinapplication.util.Logger
+import org.jetbrains.anko.toast
 import java.util.*
 
 
@@ -128,6 +129,7 @@ class BLEActivity : BaseActivity() {
                 mBluetoothAdapter?.stopLeScan(mScanCallback)
             }
         }
+        toast("停止扫描成功...")
     }
 
     override fun onResume() {
