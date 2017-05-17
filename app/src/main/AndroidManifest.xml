@@ -211,6 +211,8 @@
         <activity android:name=".activity.BLEActivity"/>
         <activity android:name=".activity.EspressoActivity">
         </activity>
+        <activity android:name=".activity.AnkoDemoActivity">
+        </activity>
     </application>
 
 </manifest>

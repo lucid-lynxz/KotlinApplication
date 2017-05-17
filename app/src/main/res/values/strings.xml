@@ -11,6 +11,8 @@
     <string name="error_network">网络连接异常,初始化失败 请检查网络！</string>
     <string name="logining">程序在后台执行, 请查看日志！</string>
     <string name="setting_su">设置成功</string>
+    <string name="user_name">输入用户名</string>
+    <string name="login_password">登录密码</string>
 
     <string name="ble_not_support">Device not support bluetooth low energy</string>
 </resources>

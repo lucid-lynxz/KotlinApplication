@@ -37,6 +37,8 @@ class MainActivity : BaseActivity() {
 
         tv_hello_dialog.setOnClickListener { MyDialogFragment(this@MainActivity).show(fragmentManager, "hello") }
 
+        tv_anko_demo.setOnClickListener { startActivity(Intent(this@MainActivity, AnkoDemoActivity::class.java)) }
+
         // 极光推送使用demo
         tv_jpush_demo.setOnClickListener { startActivity(Intent(this@MainActivity, MainPushDemoActivity::class.java)) }
 
@@ -67,7 +69,7 @@ class MainActivity : BaseActivity() {
 //        showLog()
 
         // 测试格式化日志扩展类
-        Logger.init(Logger.debugLevel,MainActivity::class.java)
+        Logger.init(Logger.debugLevel, MainActivity::class.java)
         var s = "{\"firstName\":\"Brett\",\"lastName\":\"McLaughlin\",\"email\":\"aaaa\"}"
         Logger.json(s)
     }

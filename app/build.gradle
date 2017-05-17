@@ -5,7 +5,7 @@ apply plugin: 'com.tencent.tinker.patch'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "lynxz.org.kotlinapplication"
         minSdkVersion 16
@@ -24,8 +24,6 @@ android {
                 JPUSH_APPKEY : "8966f8e120613662c44e25e1", //JPush上注册的包名对应的appkey.
                 JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
         ]
-
-
     }
     buildTypes {
         release {
@@ -44,27 +42,33 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile 'junit:junit:4.12'
+
+    //kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    // 极光推送测试
-    // 声联网二维码扫描库可以直接使用zxing
-    //权限
+    compile "org.jetbrains.anko:anko-sdk25:$anko_version"// sdk15, sdk19, sdk21, sdk23 are also available
+    compile "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+
     // 测试butterknife和kotlin冲突
     compile "com.jakewharton:butterknife:$butterknife_version"
     kapt "com.jakewharton:butterknife-compiler:$butterknife_version"
-    // retrofit
-    //有用到rxjava,这里直接导入
+
     // 热修复thinker
     //optional, help to generate the final application
     provided "com.tencent.tinker:tinker-android-anno:$tinker_version"
     //tinker's main Android lib
     compile "com.tencent.tinker:tinker-android-lib:$tinker_version"
+
+    // 极光推送测试
     compile 'cn.jiguang.sdk:jpush:3.0.0'
     compile 'cn.jiguang.sdk:jcore:1.0.0'
+
+    //二维码扫描库
     compile 'me.dm7.barcodescanner:zxing:1.9'
+
     //权限
     compile 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
-//    compile 'pub.devrel:easypermissions:0.2.0'
 
+    // retrofit
     compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'

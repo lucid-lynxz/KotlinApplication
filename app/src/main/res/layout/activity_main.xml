@@ -21,6 +21,11 @@
             android:text="Hello dialog"/>
 
         <TextView
+            android:id="@+id/tv_anko_demo"
+            style="@style/common_red_btn"
+            android:text="anko demo"/>
+
+        <TextView
             android:id="@+id/tv_jpush_demo"
             style="@style/common_red_btn"
             android:text="Jpush demo"/>
