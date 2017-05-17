@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import com.tencent.tinker.lib.tinker.TinkerInstaller
 import kotlinx.android.synthetic.main.activity_main.*
+import lynxz.org.kotlinapplication.TextureViewDemo.LiveCameraDemo
 import lynxz.org.kotlinapplication.activity.*
 import lynxz.org.kotlinapplication.jpush.MainPushDemoActivity
 import lynxz.org.kotlinapplication.util.Logger
@@ -62,7 +63,7 @@ class MainActivity : BaseActivity() {
         tv_bluetooth_low_energy.setOnClickListener { startActivity(Intent(this@MainActivity, BLEActivity::class.java)) }
 
         // 测试textureView的简单使用,跟tinker冲突了,会造成程序崩溃,就不在这里测试了,保留代码是为了以后有需要的话复现
-//        tv_textureview_livecamera.setOnClickListener { startActivity(Intent(this, LiveCameraDemo::class.java)) }
+        tv_textureview_livecamera.setOnClickListener { startActivity(Intent(this, LiveCameraDemo::class.java)) }
 
         // 取消注释后,运行gradle/tinkerPatchDebug,测试tinker功能
 //        toast("hello,I'm patch second times ")
@@ -70,7 +71,7 @@ class MainActivity : BaseActivity() {
 
         // 测试格式化日志扩展类
         Logger.init(Logger.debugLevel, MainActivity::class.java)
-        var s = "{\"firstName\":\"Brett\",\"lastName\":\"McLaughlin\",\"email\":\"aaaa\"}"
+        val s = "{\"firstName\":\"Brett\",\"lastName\":\"McLaughlin\",\"email\":\"aaaa\"}"
         Logger.json(s)
     }
 

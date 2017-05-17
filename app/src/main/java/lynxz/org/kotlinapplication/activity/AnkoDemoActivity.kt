@@ -85,7 +85,10 @@ class AnkoDemoActivity : BaseActivity() {
                     onClick {
                         if (et_account.text.toString().isNotEmpty()
                                 && et_password.text.toString().isNotEmpty())
+                        //startActivity<MainActivity>("account" to et_account.text.toString(), "password" to et_password.text.toString())
                             toast("登录成功...")
+                        else
+                            toast("请输入账户或者密码")
                     }
                 }.lparams(width = dip(300), height = dip(44)) {
                     topMargin = dip(18)

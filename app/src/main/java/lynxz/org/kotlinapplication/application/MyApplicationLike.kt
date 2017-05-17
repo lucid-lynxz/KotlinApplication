@@ -1,4 +1,4 @@
-package lynxz.org.kotlinapplication
+package lynxz.org.kotlinapplication.application
 
 import android.app.Application
 import android.content.Intent

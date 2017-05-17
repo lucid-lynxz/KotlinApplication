@@ -11,10 +11,13 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.support.v7.widget.LinearLayoutManager
+import android.widget.LinearLayout
 import android.widget.Toast
 import com.tbruyelle.rxpermissions.RxPermissions
 import kotlinx.android.synthetic.main.activity_ble.*
 import lynxz.org.kotlinapplication.R
+import lynxz.org.kotlinapplication.adapter.RvBleAdapter
 import lynxz.org.kotlinapplication.util.Logger
 import java.util.*
 
@@ -33,6 +36,7 @@ class BLEActivity : BaseActivity() {
     var mBluetoothAdapter: BluetoothAdapter? = null
     var mBluetoothLEScanner: BluetoothLeScanner? = null
     var supportLe = false
+    var devices = mutableListOf<BluetoothDevice>()
     val rxPermissions: RxPermissions by lazy { RxPermissions(this) }
     val mHandler by lazy { Handler() }
 
@@ -40,38 +44,10 @@ class BLEActivity : BaseActivity() {
         addDevice(device)
     }
 
-    private fun addDevice(device: BluetoothDevice?) {
-        if (device == null) {
-            return
-        }
-
-        if (!bleAddressSet.contains(device.address)) {
-            bleAddressSet.add(device.address)
-            Logger.d("${device.address}\t${device.name}\t${device.type}", "scanResult")
-        }
-    }
-
-    val mLeScanCallback = object : ScanCallback() {
-        override fun onScanResult(callbackType: Int, result: ScanResult?) {
-            super.onScanResult(callbackType, result)
-            addDevice(result?.device)
-        }
-
-        override fun onBatchScanResults(results: MutableList<ScanResult>?) {
-            super.onBatchScanResults(results)
-            results?.forEach { addDevice(it.device) }
-        }
-
-        override fun onScanFailed(errorCode: Int) {
-            super.onScanFailed(errorCode)
-            Logger.e("$errorCode")
-        }
-    }
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ble)
+        initRecyclerView()
         checkSupport()
 
         rxPermissions.request(android.Manifest.permission.ACCESS_FINE_LOCATION)
@@ -100,6 +76,42 @@ class BLEActivity : BaseActivity() {
                     Logger.d("cannot startScan")
                 }
             }
+        }
+    }
+
+    private fun initRecyclerView() {
+        rv_ble.layoutManager = LinearLayoutManager(this)
+        rv_ble.adapter = RvBleAdapter(this, devices)
+    }
+
+    private fun addDevice(device: BluetoothDevice?) {
+        if (device == null) {
+            return
+        }
+
+        if (!bleAddressSet.contains(device.address)) {
+            bleAddressSet.add(device.address)
+            Logger.d("${device.address}\t${device.name}\t${device.type}", "scanResult")
+
+            devices.add(device)
+            rv_ble.adapter.notifyDataSetChanged()
+        }
+    }
+
+    val mLeScanCallback = object : ScanCallback() {
+        override fun onScanResult(callbackType: Int, result: ScanResult?) {
+            super.onScanResult(callbackType, result)
+            addDevice(result?.device)
+        }
+
+        override fun onBatchScanResults(results: MutableList<ScanResult>?) {
+            super.onBatchScanResults(results)
+            results?.forEach { addDevice(it.device) }
+        }
+
+        override fun onScanFailed(errorCode: Int) {
+            super.onScanFailed(errorCode)
+            Logger.e("$errorCode")
         }
     }
 

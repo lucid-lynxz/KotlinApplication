@@ -41,12 +41,19 @@
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
+    <uses-feature android:name="android.hardware.location.gps"/>
+
+    <!-- 设置为true时App仅适用于支持低功耗蓝牙的设备，false时App适用于所有设备 -->
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="false"/>
 
     <!-- ble -->
     <!-- <uses-feature android:name="ble" -->
     <application
         xmlns:tools="http://schemas.android.com/tools"
-        android:name=".MyApplication"
+        android:name=".application.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
