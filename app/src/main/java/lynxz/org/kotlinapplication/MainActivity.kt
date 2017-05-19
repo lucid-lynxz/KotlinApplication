@@ -65,6 +65,9 @@ class MainActivity : BaseActivity() {
         // 测试textureView的简单使用,跟tinker冲突了,会造成程序崩溃,就不在这里测试了,保留代码是为了以后有需要的话复现
         tv_textureview_livecamera.setOnClickListener { startActivity(Intent(this, LiveCameraDemo::class.java)) }
 
+        // 测试通过webview调起app功能
+        tv_webview.setOnClickListener { startActivity(Intent(this, WebviewActivity::class.java)) }
+
         // 取消注释后,运行gradle/tinkerPatchDebug,测试tinker功能
 //        toast("hello,I'm patch second times ")
 //        showLog()

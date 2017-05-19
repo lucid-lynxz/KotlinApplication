@@ -11,7 +11,7 @@ import lynxz.org.kotlinapplication.R
 
 /**
  * Created by lynxz on 17/05/2017.
- * 低功耗蓝牙列表死皮诶器
+ * 低功耗蓝牙列表适配器
  */
 class RvBleAdapter(val mCxt: Context, var devices: MutableList<BluetoothDevice>) : RecyclerView.Adapter<RvBleAdapter.BleViewHolder>() {
 

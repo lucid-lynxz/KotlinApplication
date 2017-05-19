@@ -18,7 +18,8 @@
         <TextView
             android:id="@+id/tv_hello_dialog"
             style="@style/common_red_btn"
-            android:text="Hello dialog"/>
+            android:text="Hello dialog"
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/tv_anko_demo"
@@ -65,6 +66,11 @@
             style="@style/common_red_btn"
             android:text="bluetooth_low_energy"/>
 
+        <TextView
+            android:id="@+id/tv_webview"
+            style="@style/common_red_btn"
+            android:text="webview start app"/>
+
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tl_main"
@@ -72,6 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="#cdcdcdcd"
+            android:visibility="gone"
             app:tabIndicatorColor="#f00"
             app:tabMode="fixed"
             app:tabSelectedTextColor="@android:color/holo_blue_bright"

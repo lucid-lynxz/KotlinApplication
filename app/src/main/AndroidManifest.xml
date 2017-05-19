@@ -216,10 +216,9 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.BluetoothActivity"/>
         <activity android:name=".activity.BLEActivity"/>
-        <activity android:name=".activity.EspressoActivity">
-        </activity>
-        <activity android:name=".activity.AnkoDemoActivity">
-        </activity>
+        <activity android:name=".activity.EspressoActivity"/>
+        <activity android:name=".activity.AnkoDemoActivity"/>
+        <activity android:name=".activity.WebviewActivity"/>
     </application>
 
 </manifest>

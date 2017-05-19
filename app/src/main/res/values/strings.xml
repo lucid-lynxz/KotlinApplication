@@ -15,4 +15,28 @@
     <string name="login_password">登录密码</string>
 
     <string name="ble_not_support">Device not support bluetooth low energy</string>
+
+    <string-array name="app_urls">
+        <item>https://wx.tenpay.com/f2f?t=AQAAADYNWZNgck%2FH6cp84LHB6gE%3D</item>
+        <item>http://weixin.qq.com/r/3sm4oMzErpHRrYjD95zM</item>
+        <item>http://qm.qq.com/cgi-bin/qm/qr?k=3j1a8eIpHWh1sNf1yCvEEdf42oB_0Mxt</item>
+        <item>https://qr.alipay.com/a6x09076ztje1zpakvbak6f</item>
+        <item>https://qr.alipay.com/FKX02367CRNMS10WT6D3BF</item>
+        <item>https://qr.alipay.com/FKX04018LKF3TAJUN8DJ34</item>
+        <item>http://weibo.cn/qr/userinfo?uid=2510282205</item>
+        <item>http://weixin.qq.com/r/qToKErTEKulVrfBx92_7</item>
+        <item>http://weixin.qq.com/r/LUQZASXE0HivrWFi9xE-</item>
+    </string-array>
+
+    <string-array name="app_urls_type">
+        <item>微信支付</item>
+        <item>微信加入好友</item>
+        <item>QQ加好友</item>
+        <item>支付宝1</item>
+        <item>支付宝2</item>
+        <item>支付宝3</item>
+        <item>微博</item>
+        <item>微信公众号1</item>
+        <item>微信公众号2</item>
+    </string-array>
 </resources>
