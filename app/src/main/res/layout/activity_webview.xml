@@ -26,6 +26,13 @@
         android:padding="6dp"
         android:text="load"/>
 
+    <Button
+        android:id="@+id/btn_start_wx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:text="wx"/>
+
 
     <WebView
         android:id="@+id/wv"

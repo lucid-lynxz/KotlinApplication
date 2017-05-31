@@ -26,6 +26,7 @@
         <item>http://weibo.cn/qr/userinfo?uid=2510282205</item>
         <item>http://weixin.qq.com/r/qToKErTEKulVrfBx92_7</item>
         <item>http://weixin.qq.com/r/LUQZASXE0HivrWFi9xE-</item>
+        <item>weixin://r/LUQZASXE0HivrWFi9xE-</item>
     </string-array>
 
     <string-array name="app_urls_type">
@@ -38,5 +39,6 @@
         <item>微博</item>
         <item>微信公众号1</item>
         <item>微信公众号2</item>
+        <item>微信test</item>
     </string-array>
 </resources>

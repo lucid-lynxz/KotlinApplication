@@ -1,5 +1,6 @@
 package lynxz.org.kotlinapplication.activity
 
+import android.content.ComponentName
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -39,6 +40,15 @@ class WebviewActivity : BaseActivity() {
         }
 
         btn_load_url.setOnClickListener { loadUrlOrStartApp(edt_url.text.toString()) }
+        btn_start_wx.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            val cmp = ComponentName("com.tencent.mm", "com.tencent.mm.plugin.scanner.ui.BaseScanUI")
+//            intent.action = Intent.ACTION_MAIN
+//            intent.addCategory(Intent.CATEGORY_LAUNCHER)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            intent.component = cmp
+            startActivity(intent)
+        }
     }
 
     /**

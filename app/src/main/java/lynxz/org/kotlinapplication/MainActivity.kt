@@ -29,12 +29,14 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
 
         testTablayout()
+        Logger.d("test tinker")
+        Logger.d("test tinker2")
 
         // tinker好像跟camera.open冲突
-        // tinker热修复差分包文件路径设定,tinker检测到差分包存在后会去加载,并在下次启动程序后生效,生效后会自动删除差分包
+        // tinker热修复差分包文件路径设定,tinke r检测到差分包存在后会去加载,并在下次启动程序后生效,生效后会自动删除差分包
         val patchPath = Environment.getExternalStorageDirectory().absolutePath + "/patch_signed_7zip.apk"
         Log.i("tinker ", "pathPath = $patchPath")
-        TinkerInstaller.onReceiveUpgradePatch(this.application, patchPath);
+        TinkerInstaller.onReceiveUpgradePatch(this.application, patchPath)
 
         tv_hello_dialog.setOnClickListener { MyDialogFragment(this@MainActivity).show(fragmentManager, "hello") }
 

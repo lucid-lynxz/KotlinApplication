@@ -71,6 +71,11 @@
             style="@style/common_red_btn"
             android:text="webview start app"/>
 
+        <TextView
+            android:id="@+id/tv_service"
+            style="@style/common_red_btn"
+            android:text="service demo"/>
+
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tl_main"
