@@ -15,6 +15,7 @@ import rx.schedulers.Schedulers;
  * sounbus app-developer
  */
 public class TestAct2 extends BaseActivity {
+    boolean isAccess = false;
     public void test() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://open.soundbus.cn/api/v1")
@@ -31,5 +32,12 @@ public class TestAct2 extends BaseActivity {
 
                     }
                 });
+    }
+    class Temp{
+        public void test(){
+            isAccess = true;
+            TestAct2.this.test();
+        }
+
     }
 }

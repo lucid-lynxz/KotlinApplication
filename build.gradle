@@ -9,7 +9,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.2'
+        classpath 'com.android.tools.build:gradle:2.3.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.tencent.tinker:tinker-patch-gradle-plugin:$tinker_version"
 
@@ -27,3 +27,24 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+task compile {
+    println("compile task 1111")
+    doLast {
+        println("compile task 222")
+    }
+}
+
+task compileTest(dependsOn: compile) {
+    println("compileTest 111")
+    doLast {
+        println("compileTest doLast")
+    }
+}
+
+task test(dependsOn: [compile, compileTest]) {
+    doLast {
+        println 'running unit tests'
+    }
+}
+

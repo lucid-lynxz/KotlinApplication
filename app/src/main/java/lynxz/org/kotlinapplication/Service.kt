@@ -1,9 +1,8 @@
 package lynxz.org.kotlinapplication
 
 import lynxz.org.kotlinapplication.bean.UPlusGoGetTokenBean
-import retrofit2.http.Headers
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.Call
+import retrofit2.http.*
 import rx.Observable
 
 /**
@@ -20,6 +19,12 @@ interface Service {
             "X-SOP-PHONE-PARAMS: {'IMEI ':'4bcecbe44dd1c942','appName':'com.soundbus.uplusgo','appVer':'1.0','phoneBrand':'Xiaomi','phoneModel':'HM 1S','systemVer':'4.4.4'}"
     )
     @POST("/api/v1/uac/oauth/token")
-    abstract fun getInfo(@Query("grant_type") type: String = "client_credentials"): Observable<UPlusGoGetTokenBean>
+    fun getInfo(@Query("grant_type") type: String = "client_credentials"): Observable<UPlusGoGetTokenBean>
 
+
+    @HEAD
+    fun getResource(@Url url: String): Observable<Void>
+
+    @HEAD
+    fun getResourceCall(@Url url: String): Call<Void>
 }

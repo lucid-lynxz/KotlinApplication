@@ -45,7 +45,10 @@ dependencies {
 
     //kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile "org.jetbrains.anko:anko-sdk25:$anko_version"// sdk15, sdk19, sdk21, sdk23 are also available
+    // sdk15, sdk19, sdk21, sdk23 are also available
+    compile "org.jetbrains.anko:anko-sdk25:$anko_version"
+    // In case you need support-v4 bindings
+    compile "org.jetbrains.anko:anko-support-v4:$anko_version"
     compile "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
 
     // 测试butterknife和kotlin冲突

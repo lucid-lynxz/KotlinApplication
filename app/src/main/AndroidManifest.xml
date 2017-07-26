@@ -219,6 +219,7 @@
         <activity android:name=".activity.EspressoActivity"/>
         <activity android:name=".activity.AnkoDemoActivity"/>
         <activity android:name=".activity.WebviewActivity"/>
+        <activity android:name=".activity.BleActivityWithService"/>
+        <service android:name=".service.BleService"/>
     </application>
-
 </manifest>
