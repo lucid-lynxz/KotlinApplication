@@ -32,6 +32,10 @@ class MainActivity : BaseActivity() {
         Logger.d("test tinker")
         Logger.d("test tinker2")
 
+        debugConf {
+            toast("现在处于 debug 模式")
+        }
+
         // tinker好像跟camera.open冲突
         // tinker热修复差分包文件路径设定,tinke r检测到差分包存在后会去加载,并在下次启动程序后生效,生效后会自动删除差分包
         val patchPath = Environment.getExternalStorageDirectory().absolutePath + "/patch_signed_7zip.apk"
@@ -69,6 +73,8 @@ class MainActivity : BaseActivity() {
 
         // 测试通过webview调起app功能
         tv_webview.setOnClickListener { startActivity(Intent(this, WebviewActivity::class.java)) }
+
+        tv_navigation_view.setOnClickListener { startActivity(Intent(this, NavigationViewActivity::class.java)) }
 
         // 取消注释后,运行gradle/tinkerPatchDebug,测试tinker功能
 //        toast("hello,I'm patch second times ")

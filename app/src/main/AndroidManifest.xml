@@ -48,7 +48,6 @@
     <uses-feature
         android:name="android.hardware.bluetooth_le"
         android:required="false"/>
-
     <!-- ble -->
     <!-- <uses-feature android:name="ble" -->
     <application
@@ -220,6 +219,11 @@
         <activity android:name=".activity.AnkoDemoActivity"/>
         <activity android:name=".activity.WebviewActivity"/>
         <activity android:name=".activity.BleActivityWithService"/>
+
         <service android:name=".service.BleService"/>
+
+        <activity android:name=".activity.NavigationViewActivity">
+        </activity>
     </application>
+
 </manifest>

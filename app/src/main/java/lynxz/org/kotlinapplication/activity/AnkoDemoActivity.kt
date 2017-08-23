@@ -66,7 +66,8 @@ class AnkoDemoActivity : BaseActivity() {
                         rightMargin = dip(15)
                     }
                     et_password = editText {
-                        setHint(R.string.login_password)
+                        hintResource = R.string.login_password
+//                        setHint(R.string.login_password)
                         hintTextColor = Color.parseColor("#666666")
                         textSize = 16f
                         background = null

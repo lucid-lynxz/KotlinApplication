@@ -14,3 +14,9 @@ fun Context.toast(msg: String) {
 fun Context.toast(msg: Int) {
     Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
 }
+
+inline fun debugConf(code: () -> Unit) {
+    if (BuildConfig.DEBUG) {
+        code()
+    }
+}
