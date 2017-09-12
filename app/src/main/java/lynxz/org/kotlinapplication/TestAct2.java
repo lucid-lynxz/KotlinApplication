@@ -1,14 +1,14 @@
 package lynxz.org.kotlinapplication;
 
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 import lynxz.org.kotlinapplication.activity.BaseActivity;
 import lynxz.org.kotlinapplication.bean.UPlusGoGetTokenBean;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by zxz on 2016/12/29.
@@ -16,25 +16,27 @@ import rx.schedulers.Schedulers;
  */
 public class TestAct2 extends BaseActivity {
     boolean isAccess = false;
+
     public void test() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://open.soundbus.cn/api/v1")
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
         Service service = retrofit.create(Service.class);
         Observable<UPlusGoGetTokenBean> obser = service.getInfo("client_credentials");
         obser.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<UPlusGoGetTokenBean>() {
+                .subscribe(new Consumer<UPlusGoGetTokenBean>() {
                     @Override
-                    public void call(UPlusGoGetTokenBean uPlusGoGetTokenBean) {
+                    public void accept(UPlusGoGetTokenBean uPlusGoGetTokenBean) throws Exception {
 
                     }
                 });
     }
-    class Temp{
-        public void test(){
+
+    class Temp {
+        public void test() {
             isAccess = true;
             TestAct2.this.test();
         }

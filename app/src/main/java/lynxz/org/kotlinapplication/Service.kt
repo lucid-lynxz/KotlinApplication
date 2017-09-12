@@ -1,9 +1,9 @@
 package lynxz.org.kotlinapplication
 
+import io.reactivex.Observable
 import lynxz.org.kotlinapplication.bean.UPlusGoGetTokenBean
 import retrofit2.Call
 import retrofit2.http.*
-import rx.Observable
 
 /**
  * Created by zxz on 2016/12/29.

@@ -12,9 +12,8 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.widget.LinearLayoutManager
-import android.widget.LinearLayout
 import android.widget.Toast
-import com.tbruyelle.rxpermissions.RxPermissions
+import com.tbruyelle.rxpermissions2.RxPermissions
 import kotlinx.android.synthetic.main.activity_ble.*
 import lynxz.org.kotlinapplication.R
 import lynxz.org.kotlinapplication.adapter.RvBleAdapter

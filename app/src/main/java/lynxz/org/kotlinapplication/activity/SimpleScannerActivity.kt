@@ -5,7 +5,7 @@ import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import com.google.zxing.Result
-import com.tbruyelle.rxpermissions.RxPermissions
+import com.tbruyelle.rxpermissions2.RxPermissions
 import kotlinx.android.synthetic.main.activity_scan_qr.*
 import lynxz.org.kotlinapplication.R
 import lynxz.org.kotlinapplication.toast

@@ -1,6 +1,8 @@
 package lynxz.org.kotlinapplication.activity
 
 import android.os.Bundle
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_retrofit.*
 import lynxz.org.kotlinapplication.R
 import lynxz.org.kotlinapplication.Service
@@ -9,10 +11,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import rx.android.schedulers.AndroidSchedulers
-import rx.schedulers.Schedulers
 
 /**
  * Created by zxz on 2016/12/29.
@@ -31,7 +31,7 @@ class RetrofitDemoActivity : BaseActivity() {
         var retrofit = Retrofit.Builder()
                 .baseUrl("http://open.soundbus.cn")
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
 
         var service = retrofit.create(Service::class.java)
