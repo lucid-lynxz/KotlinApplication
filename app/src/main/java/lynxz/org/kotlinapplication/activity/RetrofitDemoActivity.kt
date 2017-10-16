@@ -44,8 +44,7 @@ class RetrofitDemoActivity : BaseActivity() {
 
         val url = "http://soundbus-media.oss-cn-shenzhen.aliyuncs.com/super-g/prod/resources/3/resource.zip"
         val resource = service.getResource(url)
-        resource.subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+        resource.compose { p0 -> p0.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()) }
                 .subscribe { bean ->
                     Logger.d("finish ")
                 }
@@ -61,4 +60,6 @@ class RetrofitDemoActivity : BaseActivity() {
         })
 
     }
+
+
 }

@@ -62,6 +62,11 @@
             android:text="bluetooth"/>
 
         <TextView
+            android:id="@+id/tv_animation_demo"
+            style="@style/common_red_btn"
+            android:text="animation demo"/>
+
+        <TextView
             android:id="@+id/tv_bluetooth_low_energy"
             style="@style/common_red_btn"
             android:text="bluetooth_low_energy"/>
@@ -75,6 +80,11 @@
             android:id="@+id/tv_navigation_view"
             style="@style/common_red_btn"
             android:text="navigation view"/>
+
+        <TextView
+            android:id="@+id/tv_baz_view"
+            style="@style/common_red_btn"
+            android:text="baz view"/>
 
 
         <android.support.design.widget.TabLayout

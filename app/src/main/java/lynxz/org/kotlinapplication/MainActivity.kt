@@ -76,6 +76,10 @@ class MainActivity : BaseActivity() {
 
         tv_navigation_view.setOnClickListener { startActivity(Intent(this, NavigationViewActivity::class.java)) }
 
+        tv_animation_demo.setOnClickListener { startActivity(Intent(this, AnimationActivity::class.java)) }
+
+        tv_baz_view.setOnClickListener { startActivity(Intent(this, BazDemoActivity::class.java)) }
+
         // 取消注释后,运行gradle/tinkerPatchDebug,测试tinker功能
 //        toast("hello,I'm patch second times ")
 //        showLog()

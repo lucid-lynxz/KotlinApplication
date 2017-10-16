@@ -15,6 +15,7 @@ class TestAct : Activity() {
     }
 
     private fun test() {
-
+        println(1 + "hello")
     }
+
 }

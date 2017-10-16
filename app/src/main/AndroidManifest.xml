@@ -224,6 +224,8 @@
 
         <activity android:name=".activity.NavigationViewActivity">
         </activity>
+        <activity android:name=".activity.AnimationActivity"/>
+        <activity android:name=".activity.BazDemoActivity"/>
     </application>
 
 </manifest>

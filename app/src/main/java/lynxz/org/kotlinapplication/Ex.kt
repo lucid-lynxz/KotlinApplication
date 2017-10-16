@@ -20,3 +20,8 @@ inline fun debugConf(code: () -> Unit) {
         code()
     }
 }
+
+/**
+ * 运算符重载
+ * */
+operator fun Int?.plus(other: Any?): String = "$this$other"

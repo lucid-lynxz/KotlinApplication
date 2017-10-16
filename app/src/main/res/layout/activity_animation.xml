@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <lynxz.org.kotlinapplication.widget.FlowLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/tv_translate"
+            style="@style/common_red_btn"
+            android:layout_width="wrap_content"
+            android:text="translate"/>
+
+        <TextView
+            android:id="@+id/tv_rotate"
+            style="@style/common_red_btn"
+            android:layout_width="wrap_content"
+            android:text="rotate"/>
+
+        <TextView
+            android:id="@+id/tv_value_animator"
+            style="@style/common_red_btn"
+            android:layout_width="wrap_content"
+            android:text="value animator"/>
+
+    </lynxz.org.kotlinapplication.widget.FlowLayout>
+
+    <TextView
+        android:id="@+id/tv_target"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:background="#00f"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textSize="18sp"/>
+
+</LinearLayout>
