@@ -20,9 +20,7 @@ class UI : AnkoComponent<AnkoDemoActivity> {
                 }
                 val name = editText("EditText")
                 button("Button") {
-                    onClick { view ->
-                        click()
-                    }
+                    setOnClickListener { click() }
                 }
             }
         }

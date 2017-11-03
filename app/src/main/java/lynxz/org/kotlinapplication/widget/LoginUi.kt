@@ -73,7 +73,8 @@ class LoginUi : AnkoComponent<AnkoDemoActivity> {
                 gravity = Gravity.CENTER
                 background = resources.getDrawable(R.drawable.bg_login_btn)
                 textColor = Color.parseColor("#ffffff")
-                onClick {
+
+                setOnClickListener {
                     if (et_account.text.toString().isNotEmpty()
                             && et_password.text.toString().isNotEmpty())
                     //startActivity<MainActivity>("account" to et_account.text.toString(), "password" to et_password.text.toString())
