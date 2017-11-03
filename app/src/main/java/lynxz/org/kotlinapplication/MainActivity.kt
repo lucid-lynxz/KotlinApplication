@@ -1,10 +1,14 @@
 package lynxz.org.kotlinapplication
 
 import android.content.Intent
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.os.Environment
 import android.util.Log
+import android.view.Gravity
 import android.view.View
+import android.view.ViewGroup
+import android.widget.PopupWindow
 import com.tencent.tinker.lib.tinker.TinkerInstaller
 import kotlinx.android.synthetic.main.activity_main.*
 import lynxz.org.kotlinapplication.TextureViewDemo.LiveCameraDemo
@@ -13,6 +17,7 @@ import lynxz.org.kotlinapplication.jpush.MainPushDemoActivity
 import lynxz.org.kotlinapplication.util.Logger
 import lynxz.org.kotlinapplication.widget.MyDialogFragment
 import lynxz.org.kotlinapplication.zxing.activity.CaptureActivity
+
 
 /**
  * <ol>测试tinker热修复
@@ -80,6 +85,7 @@ class MainActivity : BaseActivity() {
 
         tv_baz_view.setOnClickListener { startActivity(Intent(this, BazDemoActivity::class.java)) }
 
+        tv_pop_window.setOnClickListener { showPopWindow() }
         // 取消注释后,运行gradle/tinkerPatchDebug,测试tinker功能
 //        toast("hello,I'm patch second times ")
 //        showLog()
@@ -88,6 +94,31 @@ class MainActivity : BaseActivity() {
         Logger.init(Logger.debugLevel, MainActivity::class.java)
         val s = "{\"firstName\":\"Brett\",\"lastName\":\"McLaughlin\",\"email\":\"aaaa\"}"
         Logger.json(s)
+    }
+
+    private fun showPopWindow() {
+        val contentView = layoutInflater.inflate(R.layout.pop_window_layout, null)
+        contentView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
+        val popWindow = PopupWindow(contentView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply {
+            setBackgroundDrawable(BitmapDrawable())
+            isOutsideTouchable = true
+            isFocusable = true
+        }
+        showPopAtViewTop(popWindow, tv_pop_window)
+    }
+
+    private fun showPopAtViewTop(popupWindow: PopupWindow, v: View) {
+        val location = IntArray(2)
+        v.getLocationOnScreen(location)
+        val x = location[0]
+        val y = location[1]
+        // 初次显示需要measure一下,或者height会为0
+        popupWindow.contentView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
+        val height = popupWindow.contentView.measuredHeight
+
+        val offY = y - height
+        Logger.d("height = $height y = $y all = $offY")
+        popupWindow.showAtLocation(v, Gravity.NO_GRAVITY, x, offY)
     }
 
 
