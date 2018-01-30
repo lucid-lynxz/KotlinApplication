@@ -28,26 +28,22 @@ class RetrofitDemoActivity : BaseActivity() {
     }
 
     fun initData() {
-        var retrofit = Retrofit.Builder()
+        val retrofit = Retrofit.Builder()
                 .baseUrl("http://open.soundbus.cn")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
 
-        var service = retrofit.create(Service::class.java)
-        var observable = service.getInfo()
+        val service = retrofit.create(Service::class.java)
+        val observable = service.getInfo()
         observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { bean ->
-                    tv_msg.text = bean.access_token
-                }
+                .subscribe({ tv_msg.text = it.access_token }, { it.printStackTrace() })
 
         val url = "http://soundbus-media.oss-cn-shenzhen.aliyuncs.com/super-g/prod/resources/3/resource.zip"
         val resource = service.getResource(url)
         resource.compose { p0 -> p0.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()) }
-                .subscribe { bean ->
-                    Logger.d("finish ")
-                }
+                .subscribe({ Logger.d("finish ") }, { it.printStackTrace() })
 
         service.getResourceCall(url).enqueue(object : Callback<Void> {
             override fun onFailure(call: Call<Void>?, t: Throwable?) {

@@ -32,20 +32,15 @@
             android:text="Jpush demo"/>
 
         <TextView
-            android:id="@+id/tv_scan"
-            style="@style/common_red_btn"
-            android:text="barScanner公司所用库"/>
-
-        <TextView
-            android:id="@+id/tv_scan_zxing"
-            style="@style/common_red_btn"
-            android:text="barScannerZxing"/>
-
-        <TextView
             android:id="@+id/tv_retrofit"
             style="@style/common_red_btn"
             android:text="retrofit示例"/>
 
+
+        <TextView
+            android:id="@+id/tv_qrcode"
+            style="@style/common_red_btn"
+            android:text="二维码扫描"/>
         <TextView
             android:id="@+id/tv_butterknife"
             style="@style/common_red_btn"
@@ -82,9 +77,9 @@
             android:text="navigation view"/>
 
         <TextView
-            android:id="@+id/tv_baz_view"
+            android:id="@+id/tv_custom_view"
             style="@style/common_red_btn"
-            android:text="baz view"/>
+            android:text="custom view"/>
 
         <TextView
             android:id="@+id/tv_pop_window"

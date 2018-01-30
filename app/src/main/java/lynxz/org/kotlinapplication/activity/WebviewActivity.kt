@@ -41,13 +41,22 @@ class WebviewActivity : BaseActivity() {
 
         btn_load_url.setOnClickListener { loadUrlOrStartApp(edt_url.text.toString()) }
         btn_start_wx.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
-            val cmp = ComponentName("com.tencent.mm", "com.tencent.mm.plugin.scanner.ui.BaseScanUI")
+            try {
+                /*
+                * 直接指定intent可能会抛出异常
+                * 需要目标页面添加 android:exported="true"
+                * 参考: https://stackoverflow.com/questions/4162447/android-java-lang-securityexception-permission-denial-start-intent
+                * */
+                val intent = Intent(Intent.ACTION_VIEW)
+                val cmp = ComponentName("com.tencent.mm", "com.tencent.mm.plugin.scanner.ui.BaseScanUI")
 //            intent.action = Intent.ACTION_MAIN
 //            intent.addCategory(Intent.CATEGORY_LAUNCHER)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            intent.component = cmp
-            startActivity(intent)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                intent.component = cmp
+                startActivity(intent)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
     }
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ArcProgress">
+        <!-- 圆弧曲线的起始角度 -->
+        <attr name="start_angle" format="float"/>
+        <!-- 圆弧扫过的角度 -->
+        <attr name="sweep_angle" format="float"/>
+        <!-- 当前已完成的进度百分比 (0,100] -->
+        <attr name="progress" format="float"/>
+        <!-- 总共要绘制的进度点个数,如3, 会将曲线均等分为3份, 在等分处绘制一个小圆点(不包括起始和结束点)-->
+        <attr name="progress_count" format="integer"/>
+        <!-- 圆弧曲线的宽度 -->
+        <attr name="bar_width" format="dimension"/>
+        <!-- 已完成进度的前景色 -->
+        <attr name="progress_color" format="color"/>
+        <!-- 进度条背景色 -->
+        <attr name="background_color" format="color"/>
+        <attr name="point_color" format="color"/>
+    </declare-styleable>
+</resources>

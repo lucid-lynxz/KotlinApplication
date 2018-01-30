@@ -12,7 +12,6 @@ import lynxz.org.kotlinapplication.activity.*
 import lynxz.org.kotlinapplication.jpush.MainPushDemoActivity
 import lynxz.org.kotlinapplication.util.Logger
 import lynxz.org.kotlinapplication.widget.MyDialogFragment
-import lynxz.org.kotlinapplication.zxing.activity.CaptureActivity
 
 
 /**
@@ -46,15 +45,10 @@ class MainActivity : BaseActivity() {
         tv_hello_dialog.setOnClickListener { MyDialogFragment(this@MainActivity).show(fragmentManager, "hello") }
 
         tv_anko_demo.setOnClickListener { startActivity(Intent(this@MainActivity, AnkoDemoActivity::class.java)) }
+        tv_qrcode.setOnClickListener { startActivity(Intent(this@MainActivity, QrCodeActivity::class.java)) }
 
         // 极光推送使用demo
         tv_jpush_demo.setOnClickListener { startActivity(Intent(this@MainActivity, MainPushDemoActivity::class.java)) }
-
-        // 二维码功能测试
-        tv_scan.setOnClickListener { startActivity(Intent(this@MainActivity, SimpleScannerActivity::class.java)) }
-
-        // zxing库使用测试
-        tv_scan_zxing.setOnClickListener { startActivity(Intent(this@MainActivity, CaptureActivity::class.java)) }
 
         val intent = Intent(this@MainActivity, RetrofitDemoActivity::class.java)
 //        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -78,9 +72,7 @@ class MainActivity : BaseActivity() {
         tv_navigation_view.setOnClickListener { startActivity(Intent(this, NavigationViewActivity::class.java)) }
 
         tv_animation_demo.setOnClickListener { startActivity(Intent(this, AnimationActivity::class.java)) }
-
-        tv_baz_view.setOnClickListener { startActivity(Intent(this, BazDemoActivity::class.java)) }
-
+        tv_custom_view.setOnClickListener { startActivity(Intent(this, CustomViewActivity::class.java)) }
         tv_pop_window.setOnClickListener { startActivity(Intent(this, PopWindowActivity::class.java)) }
 
         // 取消注释后,运行gradle/tinkerPatchDebug,测试tinker功能
