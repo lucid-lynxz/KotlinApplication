@@ -73,7 +73,7 @@ class MainActivity : BaseActivity() {
 
         tv_animation_demo.setOnClickListener { startActivity(Intent(this, AnimationActivity::class.java)) }
         tv_custom_view.setOnClickListener { startActivity(Intent(this, CustomViewActivity::class.java)) }
-        tv_pop_window.setOnClickListener { startActivity(Intent(this, PopWindowActivity::class.java)) }
+        tv_dialog_pop_window.setOnClickListener { startActivity(Intent(this, DialogActivity::class.java)) }
 
         // 取消注释后,运行gradle/tinkerPatchDebug,测试tinker功能
 //        toast("hello,I'm patch second times ")

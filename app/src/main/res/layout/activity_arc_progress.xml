@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="lynxz.org.kotlinapplication.activity.ArcProgressActivity">
 
     <lynxz.org.kotlinapplication.widget.ArcProgress
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        app:background_color="@color/red"
         app:progress="30"
+        android:background="#80ccddee"
         app:progress_count="5"
-        app:bar_width="6dp"/>
-</RelativeLayout>
+        app:start_angle="-140"
+        app:sweep_angle="90"/>
+
+    <lynxz.org.kotlinapplication.widget.PbView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:minHeight="200dp"/>
+</LinearLayout>

@@ -82,9 +82,9 @@
             android:text="custom view"/>
 
         <TextView
-            android:id="@+id/tv_pop_window"
+            android:id="@+id/tv_dialog_pop_window"
             style="@style/common_red_btn"
-            android:text="pop window"/>
+            android:text="dialog pop window"/>
 
 
         <android.support.design.widget.TabLayout
