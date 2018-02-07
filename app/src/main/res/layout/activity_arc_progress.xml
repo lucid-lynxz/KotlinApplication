@@ -11,16 +11,19 @@
     <lynxz.org.kotlinapplication.widget.ArcProgress
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:id="@+id/ap_demo"
         app:background_color="@color/red"
-        app:progress="30"
-        android:background="#80ccddee"
-        app:progress_count="5"
-        app:start_angle="-140"
-        app:sweep_angle="90"/>
+        app:progress="2"
+        app:progress_count="5"/>
 
-    <lynxz.org.kotlinapplication.widget.PbView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:minHeight="200dp"/>
+    <TextView
+        android:id="@+id/tv_forward_progress"
+        style="@style/common_red_btn"
+        android:text="forward progress"/>
+
+    <TextView
+        android:id="@+id/tv_backward_progress"
+        style="@style/common_red_btn"
+        android:text="backward progress"/>
+
 </LinearLayout>
