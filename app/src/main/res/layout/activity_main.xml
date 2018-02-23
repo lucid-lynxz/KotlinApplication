@@ -41,6 +41,7 @@
             android:id="@+id/tv_qrcode"
             style="@style/common_red_btn"
             android:text="二维码扫描"/>
+
         <TextView
             android:id="@+id/tv_butterknife"
             style="@style/common_red_btn"
@@ -65,6 +66,11 @@
             android:id="@+id/tv_bluetooth_low_energy"
             style="@style/common_red_btn"
             android:text="bluetooth_low_energy"/>
+
+        <TextView
+            android:id="@+id/tv_wifi"
+            style="@style/common_red_btn"
+            android:text="wifi config"/>
 
         <TextView
             android:id="@+id/tv_webview"

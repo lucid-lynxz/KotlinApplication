@@ -36,6 +36,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
     <uses-permission android:name="android.permission.GET_TASKS"/>
 
     <!-- 蓝牙功能 -->
@@ -238,6 +239,8 @@
         <activity android:name=".activity.QrCodeActivity">
         </activity>
         <activity android:name=".activity.DialogActivity">
+        </activity>
+        <activity android:name=".activity.WifiDemoActivity">
         </activity>
     </application>
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="lynxz.org.kotlinapplication.activity.WifiDemoActivity">
+
+    <TextView
+        android:id="@+id/tv_get_wifi_info"
+        style="@style/common_red_btn"
+        android:text="get all wifi info"/>
+
+    <TextView
+        android:id="@+id/tv_remove_specify_wifi"
+        style="@style/common_red_btn"
+        android:text="remove specify wifi(you create)"/>
+
+    <TextView
+        android:id="@+id/tv_remove_first_wifi"
+        style="@style/common_red_btn"
+        android:text="remove first wifi"/>
+
+    <TextView
+        android:id="@+id/tv_create_wifi_config"
+        style="@style/common_red_btn"
+        android:text="create wifi config"/>
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"/>
+</LinearLayout>
