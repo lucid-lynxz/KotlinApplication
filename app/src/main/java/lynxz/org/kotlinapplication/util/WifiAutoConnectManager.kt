@@ -1,16 +1,19 @@
 package lynxz.org.kotlinapplication.util
 
+import android.app.Application
 import android.net.wifi.WifiConfiguration
 import android.net.wifi.WifiManager
 import lynxz.org.kotlinapplication.otherwise
 import lynxz.org.kotlinapplication.yes
+import java.lang.reflect.InvocationHandler
+import java.lang.reflect.Proxy
 
 /**
  * Created by lynxz on 23/02/2018.
  * 博客: https://juejin.im/user/5812c2b0570c3500605a15ff
  * 连接指定的wifi,[参考文章](http://www.cnblogs.com/zhuqiang/p/3566686.html)
  */
-class WifiAutoConnectManager(var wifiManager: WifiManager?) {
+class WifiAutoConnectManager(var wifiManager: WifiManager?, var mApp: Application) {
     companion object {
         val TAG = WifiAutoConnectManager::class.java.simpleName
     }
@@ -35,7 +38,7 @@ class WifiAutoConnectManager(var wifiManager: WifiManager?) {
     fun isExist(ssid: String): WifiConfiguration? {
         val rSsid = ssid.replace("\"", "")
         return wifiManager?.configuredNetworks?.firstOrNull {
-            Logger.d("ssid = ${it.SSID}")
+            //            Logger.d("ssid = ${it.SSID}")
             it.SSID == "\"$rSsid\""
         }
     }
@@ -128,11 +131,38 @@ class WifiAutoConnectManager(var wifiManager: WifiManager?) {
         }.otherwise {
             val tempConfig = isExist(ssid!!)
             return if (tempConfig != null) {
-                wifiManager?.removeNetwork(tempConfig.networkId) ?: false
+                val result = wifiManager?.removeNetwork(tempConfig.networkId) ?: false
+//                if (!result) {
+//                    forgetWifi(tempConfig)
+//                }
+                result
             } else {
                 false
             }
         }
+    }
+
+    /**
+     * 他通过反射调用hide函数 forget(int,ActionListener) 来删除wifi
+     * 不过我在android7.0+上也是测试不成功
+     * */
+    private fun forgetWifi(tempConfig: WifiConfiguration) {
+        val actionListener = Class.forName("android.net.wifi.WifiManager\$ActionListener")
+        //实现 InvocationHandler 接口，所有的我们需要的回调方法，都是通过这个代理回调来实现的
+        //通过第二个参数可以判断回调的是什么方法
+        val invocationHandler = InvocationHandler { proxy, method, args ->
+            Logger.d("forgetWifi 代理回调 ${method.name}： ${args?.joinToString()}")
+            //通过方法的名称判断回调的是什么方法
+            // if (method.name == "onSuccess") {
+            // } else {
+            // }
+        }
+        //创建接口代理类，可以理解这个就是接口实现类（实现了接口 ActionListener 的类）
+        val proxy = Proxy.newProxyInstance(mApp.classLoader, arrayOf(actionListener), invocationHandler)
+
+        val forgetNet = wifiManager?.javaClass?.getDeclaredMethod("forget", Int::class.java, actionListener)
+        forgetNet?.isAccessible = true
+        forgetNet?.invoke(wifiManager, tempConfig.networkId, proxy)
     }
 
     /**

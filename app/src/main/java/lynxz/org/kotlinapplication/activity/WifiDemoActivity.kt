@@ -19,7 +19,7 @@ class WifiDemoActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wifi_demo)
         val wifiManager: WifiManager? = getSystemService(Context.WIFI_SERVICE) as WifiManager?
-        val wifiAutoConnectManager = WifiAutoConnectManager(wifiManager)
+        val wifiAutoConnectManager = WifiAutoConnectManager(wifiManager, application)
 
         tv_get_wifi_info.setOnClickListener {
             tv_info.text = wifiAutoConnectManager.getAllWifiInfo()
